@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>高一甲領袖生請假生成器</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <h1>領袖生請假生成器</h1>
+    </div>
+    <div class="select">
+        <label for="name-select">選擇你的名字：</label>
+        <select name="names" id="name-select" class="custom-select">
+            <option value="">----</option>
+            <option value="1501">陳子軒</option>
+            <option value="1506">張進樂</option>
+            <option value="1515">江梓謙</option>
+            <option value="1517">郭綽豪</option>
+            <option value="1521">梁文謙</option>
+            <option value="1529">戴穎豪</option>
+            <option value="1535">黃啟謙</option>
+        </select>
+    </div>
+    <div class="reason-input">
+        <label for="reason">原因：</label>
+        <input id="reason">
+    </div>
+    <div class="time_select">
+        <label for="start">請假日期：</label>
+        <input type="date" id="start" name="trip-start" step="7" />
+        <div class="time_zone">
+            <button class="time-btn active" data-time="morning">早上</button>
+            <button class="time-btn active" data-time="recess">小息</button>
+            <button class="time-btn" data-time="noon">中午</button>
+            <button class="time-btn" data-time="after-school" disabled>放學</button>
+        </div>
+    </div>
+    <button id="generate_btn">生成</button>
+    <div class="result">
+        <output id="output">按下生成後會在這裏顯示</output>
+    </div>
+    <button id="copy_btn">點我複製</button>
+    <div id="Modal" class="modal-overlay">
+        <div class="modal-box">
+            <span id="closeBtn" class="close-x">&times;</span>
+            <h2 id="tipsTitle">複製</h2>
+            <p id="tipsContect"></p>
+        </div>
+    </div>
+</body>
+</html>
