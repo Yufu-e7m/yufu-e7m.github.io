@@ -230,18 +230,25 @@ button:disabled { opacity: .5; cursor: not-allowed; }
 }
 
 .time_zone {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
     margin-top: 16px;
 }
 
 .time_zone button {
-    flex-wrap: nowrap;
-    margin: 0 16px 0 4px;
-    font-size: 1.2rem;
+    min-width: 0;
+    margin: 0;
+    padding: 12px 8px;
+    font-size: 16px;
+    letter-spacing: .04em;
 }
 
-.time_zone button:hover {
-    background: rgb(46 97 77 / 0.8);
+@media (hover: hover) {
+    .time_zone button:not(:disabled):hover {
+        background: rgb(46 97 77 / 0.8);
+        color: white;
+    }
 }
 
 .time_zone .time-btn.active {
@@ -260,11 +267,19 @@ button:disabled { opacity: .5; cursor: not-allowed; }
 
 @media (max-width: 480px) {
     html { padding: 20px 12px; }
+    .time_zone { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     body { padding: 28px 22px; border-radius: 21px; }
     #app { margin-bottom: 25px; padding-bottom: 22px; }
     .result { padding: 18px; }
     .modal-overlay { padding: 16px; }
     .modal-box { padding: 28px 24px; max-height: calc(100dvh - 32px); }
+}
+
+@media (max-width: 360px) {
+    html { padding: 12px 8px; }
+    body { padding: 24px 16px; }
+    h1 { font-size: 22px; }
+    .result { padding: 16px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
